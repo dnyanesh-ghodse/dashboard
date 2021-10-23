@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>User Management Dashboard</title>
+  </head>
+  <body>
+    <main>
+      <div class="bg"></div>
+      <div class="dashboard">
+        <div class="header">
+          <div class="total_projects">
+            <h2 id="total">24</h2>
+            <p>Total Users</p>
+          </div>
+          <div class="compeleted_projects">
+            <h2 id="active">18</h2>
+            <p>Active Users</p>
+          </div>
+          <div class="pending_projects">
+            <h2 id="inactive">6</h2>
+            <p>Inactive Users</p>
+          </div>
+          <div class="search">
+            <p>Search</p>
+            <div>
+              <input type="text" id="search_input" /><i
+                id="search"
+                class="fas fa-search"
+              ></i>
+            </div>
+          </div>
+        </div>
+        <div class="list_table">
+          <table>
+            <thead>
+              <th>User Id</th>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Email</th>
+              <th>Gender</th>
+              <th>Action</th>
+            </thead>
+            <tbody id="list"></tbody>
+          </table>
+        </div>
+        <div class="addbtn" id="addbtn">
+          <button>+</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="form_modal" id="form_modal">
+      <div class="modal">
+        <p class="close" id="close">x</p>
+        <h3>Add new Projects</h3>
+        <div class="form_container">
+          <form action="">
+            <div class="project_name">
+              <label for="project_name">Project Name</label>
+              <input
+                type="text"
+                name="project_name"
+                id="project_name"
+                required
+              />
+            </div>
+            <div class="status">
+              <label for="status">Status</label>
+              <select name="status" id="status" required>
+                <option value="Compeleted">Compeleted</option>
+                <option value="Pending">Pending</option>
+              </select>
+            </div>
+            <div class="date">
+              <label for="date">Date</label>
+              <input type="date" name="date" id="date" required />
+            </div>
+            <div class="progress">
+              <span id="show_progress"></span>
+              <label for="progress">Progress</label>
+              <input type="range" name="progress" id="progress" required />
+            </div>
+            <div class="btn">
+              <button type="submit" id="add">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
